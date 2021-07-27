@@ -1,0 +1,26 @@
+{
+  "name": "graqhql-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js",
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "RunningWater",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.0.2",
+    "graphql": "^15.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "nodemon": "^2.0.12"
+  }
+}
