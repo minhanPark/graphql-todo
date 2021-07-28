@@ -16,5 +16,7 @@ export default gql`
   type Mutation {
     addTodo(title: String!, description: String): Todo
     removeTodo(id: Int!): Todo
+    toggleComplete(id: Int!): Todo
+    updateTodo(id: Int!, title: String!, description: String): Todo
   }
 `;

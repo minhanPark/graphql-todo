@@ -14,5 +14,28 @@ export default {
         },
       }),
     removeTodo: (_, { id }) => client.todo.delete({ where: { id } }),
+    toggleComplete: async (_, { id }) => {
+      const existedTodo = await client.todo.findUnique({
+        where: {
+          id,
+        },
+      });
+      return client.todo.update({
+        where: { id },
+        data: {
+          isCompleted: !existedTodo.isCompleted,
+        },
+      });
+    },
+    updateTodo: (_, { id, title, description }) =>
+      client.todo.update({
+        where: {
+          id,
+        },
+        data: {
+          title,
+          description,
+        },
+      }),
   },
 };
