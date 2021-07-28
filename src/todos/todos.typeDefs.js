@@ -10,7 +10,11 @@ export default gql`
     updatedAt: String
   }
   type Query {
-    todo: Todo
+    todo(id: Int!): Todo
     todos: [Todo]
+  }
+  type Mutation {
+    addTodo(title: String!, description: String): Todo
+    removeTodo(id: Int!): Todo
   }
 `;
